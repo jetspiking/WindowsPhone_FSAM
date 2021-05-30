@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="FileSystemAccessModifier.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FileSystemAccessModifier"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RequestedTheme="Dark">
+
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <StackPanel>
+            <TextBlock Text="File System Access Modifier" FontSize="25" Margin="10,5,10,0"></TextBlock>
+
+            <TextBlock Text="File Or folder path" FontSize="15" Margin="10,20,10,0"/>
+            <TextBox x:Name="FilePath" Margin="10,5,10,0"/>
+
+            <TextBlock Text="Pick Access Modifier" FontSize="15" Margin="10,20,10,0"/>
+            <ComboBox x:Name="AttributeType" Margin="10,5,10,0" HorizontalAlignment="Stretch">
+
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel/>
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+
+                </ComboBox>
+
+            <TextBlock Text="Apply For Contents Of Folder" FontSize="15" Margin="10,20,10,0" />
+            
+            <StackPanel Margin="10,5,10,0" Orientation="Horizontal">
+                <CheckBox x:Name="RecursiveCheckbox" Click="ContentsCheckbox_Click"/>
+                <Button x:Name="HelpRecursiveCheckbox" Click="HelpContentsCheckbox_Click">
+                    <SymbolIcon Symbol="Help"/>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Text="Read Current Access Modifier" FontSize="15" Margin="10,20,10,0"/>
+            <Button Content="Read" HorizontalAlignment="Stretch" Margin="10,5,10,0" Click="Button_Click_Read_Modifier"/>
+
+            <TextBlock Text="Apply Changes" FontSize="15" Margin="10,20,10,0"/>
+            <Button Content="Write" HorizontalAlignment="Stretch" Margin="10,5,10,0" Click="Button_Click_Confirm_Changes"/>
+            
+        </StackPanel>
+        
+    </ScrollViewer>
+
+</Page>
